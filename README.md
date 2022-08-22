@@ -5,7 +5,7 @@
 * Write `docker-compose up -d`
 
 # About services
-The application was created to simplify the work with cryptographic algorithms
+Application was created to simplify the work with cryptographic algorithms
 * backend - frontend (django) - localhost:8080
 
 # Screenshots
