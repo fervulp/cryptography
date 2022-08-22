@@ -1,0 +1,24 @@
+{% extends "global/base.html" %}
+{% comment %} {% load tags %} {% endcomment %}
+
+{% block content %}
+
+        <div class="col justify-content-center ">
+            <i class="text-center font-weight-bold">
+                Если ваша задача похожа на одну из представленных просто жкните по названию задачи
+            </i> 
+
+            <br>
+
+            {% comment %} {% get_list as list_task %} {% endcomment %}
+            {% for num, head, text in list_task %}
+                <h5 class="text-center font-weight-bold">{{num}}. 
+                    <a href="{% url 'home' id=num  %}">{{ head }}</a>
+                </h5>
+
+                <p>{{ text|safe }}</p>
+                <br>
+            {% endfor %}
+        </div>
+    
+{% endblock content %}

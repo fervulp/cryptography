@@ -1,0 +1,34 @@
+{% load tags %}
+<header class="d-flex justify-content-center py-3">
+
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="nav">
+            {% comment %} <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li> {% endcomment %}
+            <li class="nav-item"><a href="{% url 'info' %}" class="nav-link">Справка</a></li>
+
+            {% get_list as list_task %}
+
+            <li class="nav-item dropdown">
+                <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Все задания (жмакни)
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {% for num, head, text in list_task %}
+                        {% comment %} <li class="nav-item"><a href="{% url 'home' id=num  %}" class="nav-link"></a></li> {% endcomment %}
+                        <a class="dropdown-item" href="{% url 'home' id=num  %}">{{num}}. {{head}}</a>
+                    {% endfor %}
+                </div>
+            </li>
+            
+            {% comment %} <li class="nav-item"><a href="{% url 'home1' id=1  %}" class="nav-link">Эль-Гамаль</li> {% endcomment %}
+            
+        </ul>
+    </nav>
+</header>
+
+
+
+
+
